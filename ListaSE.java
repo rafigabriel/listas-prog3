@@ -1,4 +1,4 @@
-public class ListaSE{
+public class ListaSE {
     Celula firstCell;
 
     ListaSE() {
@@ -24,18 +24,16 @@ public class ListaSE{
     }
 
     public void insertAtEnd(Celula c) {
-        if(empty()){
+        if (empty()) {
             firstCell = c;
-        }
-        else{
+        } else {
             Celula aux = firstCell;
-            while(aux.next != null){
+            while (aux.next != null) {
                 aux = aux.next;
             }
             aux.next = c;
         }
     }
-       
 
     public void insertAtMiddle(Celula c) {
         Celula aux = firstCell;
@@ -56,37 +54,28 @@ public class ListaSE{
         }
     }
 
-    public void removeAtBegin(){
+    public void removeAtBegin() {
         Celula aux = firstCell;
-        if(!empty()){
-            if(aux.next != null){
+        if (!empty()) {
+            if (aux.next != null) {
                 firstCell = aux.next;
                 aux = null;
-            }
-            else{
+            } else {
                 firstCell = null;
             }
         }
     }
 
-    public boolean search(int v){
-        Celula aux = firstCell;
-        if(!empty()){
-           if(aux.value == v){
-            System.out.println("oi");
-            return true;
-           }
-           else{
-            while(aux.next != null){
-                if(aux.value == v){
-                    System.out.println("oiii");
-                    return true;
-                }
+    Celula search(int value) {
+        if (empty()) {
+            return null;
+        } else {
+            Celula aux = firstCell;
+            while (aux != null && aux.value != value) {
                 aux = aux.next;
             }
-           }
+
+            return aux;
         }
-        System.out.println("nada");
-        return false;
     }
 }

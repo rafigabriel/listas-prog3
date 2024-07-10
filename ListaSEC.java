@@ -24,7 +24,27 @@ public class ListaSEC {
         }
     }
 
-    public void inserAtBegin(){
-        
+    public void inserAtBegin(Celula c) {
+        Celula aux = head.next;
+        head.next = c;
+        c.next = aux;
+    }
+
+    Celula search(int value) {
+        if (empty()) {
+            return null;
+        } else {
+            Celula aux = head.next;
+
+            while (aux != head && aux.value != value) {
+                aux = aux.next;
+            }
+
+            if (aux == head) {
+                return null;
+            }
+
+            return aux;
+        }
     }
 }
