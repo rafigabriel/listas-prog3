@@ -4,4 +4,5 @@ public class Celula{
     }
     int value;
     Celula next;
+    Celula prev;
 }

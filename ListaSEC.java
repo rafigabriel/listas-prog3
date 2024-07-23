@@ -10,7 +10,7 @@ public class ListaSEC {
         return (head.next == head);
     }
 
-    public void insertAtEnd(Celula c) {
+    public void insertAtEnding(Celula c) {
         if (empty()) {
             head.next = c;
             c.next = head;
@@ -24,27 +24,49 @@ public class ListaSEC {
         }
     }
 
-    public void inserAtBegin(Celula c) {
+    public void inserAtBeginning(Celula c) {
         Celula aux = head.next;
         head.next = c;
         c.next = aux;
     }
-
-    Celula search(int value) {
+    
+    public boolean removeAtBeginning() {
         if (empty()) {
-            return null;
+            return false;
         } else {
             Celula aux = head.next;
+            head.next = aux.next;
+            aux.next = null;
+            return true;
+        }
+    }
 
-            while (aux != head && aux.value != value) {
-                aux = aux.next;
+    public boolean removeAtEnding() {
+        if (empty()) {
+            return false;
+        } else {
+            Celula aux = head.next;
+            if (aux.next != head) {
+                while ((aux.next).next != head) {
+                    aux = aux.next;
+                }
+                Celula aux2 = aux.next;
+                aux.next = head;
+                aux2.next = null;
+                return true;
+            } else {
+                head.next = head;
+                aux.next = null;
+                return true;
             }
-
-            if (aux == head) {
-                return null;
-            }
-
-            return aux;
+        }
+    }
+    
+    public void impress() {
+        Celula aux = head.next;
+        while (aux != head) {
+            System.out.println("Valor = " + aux.value);
+            aux = aux.next;
         }
     }
 }

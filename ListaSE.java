@@ -1,4 +1,4 @@
-public class ListaSE {
+public class ListaSE{
     Celula firstCell;
 
     ListaSE() {
@@ -9,7 +9,7 @@ public class ListaSE {
         return (firstCell == null);
     }
 
-    public void inserAtBegin(Celula c) {
+    public void inserAtBeginning(Celula c) {
         c.next = firstCell;
         firstCell = c;
     }
@@ -23,24 +23,26 @@ public class ListaSE {
 
     }
 
-    public void insertAtEnd(Celula c) {
-        if (empty()) {
+    public void insertAtEnding(Celula c) {
+        if(empty()){
             firstCell = c;
-        } else {
+        }
+        else{
             Celula aux = firstCell;
-            while (aux.next != null) {
+            while(aux.next != null){
                 aux = aux.next;
             }
             aux.next = c;
         }
     }
+       
 
     public void insertAtMiddle(Celula c) {
         Celula aux = firstCell;
 
     }
 
-    public void removeAtEnd() {
+    public void removeAtEnding() {
         Celula aux = firstCell;
         if (empty()) {
             if (aux.next == null) {
@@ -54,28 +56,37 @@ public class ListaSE {
         }
     }
 
-    public void removeAtBegin() {
+    public void removeAtBeginning(){
         Celula aux = firstCell;
-        if (!empty()) {
-            if (aux.next != null) {
+        if(!empty()){
+            if(aux.next != null){
                 firstCell = aux.next;
                 aux = null;
-            } else {
+            }
+            else{
                 firstCell = null;
             }
         }
     }
 
-    Celula search(int value) {
-        if (empty()) {
-            return null;
-        } else {
-            Celula aux = firstCell;
-            while (aux != null && aux.value != value) {
+    public boolean search(int v){
+        Celula aux = firstCell;
+        if(!empty()){
+           if(aux.value == v){
+            System.out.println("oi");
+            return true;
+           }
+           else{
+            while(aux.next != null){
+                if(aux.value == v){
+                    System.out.println("oiii");
+                    return true;
+                }
                 aux = aux.next;
             }
-
-            return aux;
+           }
         }
+        System.out.println("nada");
+        return false;
     }
 }

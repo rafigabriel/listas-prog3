@@ -6,9 +6,9 @@ public class Main {
         
         ListaSE listaSe = new ListaSE();
 
-        listaSe.inserAtBegin(c1);
-        listaSe.inserAtBegin(c2);
-        listaSe.inserAtBegin(c3);
+        listaSe.inserAtBeginning(c1);
+        listaSe.inserAtBeginning(c2);
+        listaSe.inserAtBeginning(c3);
         listaSe.impress();
         listaSe.search(40);
     }
