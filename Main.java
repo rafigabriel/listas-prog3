@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        Celula c1 = new Celula(10);
-        Celula c2 = new Celula(20);
-        Celula c3 = new Celula(30);
+        Cell c1 = new Cell(10);
+        Cell c2 = new Cell(20);
+        Cell c3 = new Cell(30);
         
-        ListaSE listaSe = new ListaSE();
+        ListSE listaSe = new ListSE();
 
         listaSe.inserAtBeginning(c1);
         listaSe.inserAtBeginning(c2);
